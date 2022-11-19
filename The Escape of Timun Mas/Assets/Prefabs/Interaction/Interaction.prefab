@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5916714959139277471}
   - component: {fileID: 5916714959139277468}
   m_Layer: 8
-  m_Name: Kinesis Skill
+  m_Name: Interaction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
