@@ -1,0 +1,44 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class AI_ScriptNew : MonoBehaviour
+{
+	public GameObject ThePlayer;
+	public GameObject TheEnemy;
+	
+	public float targetDistance;
+	public float AllowedDistance = 5f;
+	public float FollowSpeed;
+	
+	public RaycastHit shoot;
+	
+    // Start is called before the first frame update
+    void Start()
+    {
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+		Vector3 rotation = Quaternion.LockRotation(target).eulerAngles;
+		rotation.y = 0f;
+		
+        //transform.LookAt(ThePlayer.transform);
+		transform.LookAt(Quaternion.Euler(rotation));
+		if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out shoot)){
+			targetDistance = shoot.distance;
+			if(targetDistance >= AllowedDistance)
+			{
+				FollowSpeed = 0.05f;
+				//TheEnemy.GetComponent<animation>
+				transform.position = Vector3.MoveTowards(transform.position, ThePlayer.transform.position, FollowSpeed);
+			}
+			else
+			{
+				FollowSpeed = 0;
+				//TheEnemy.GetComponent<animation>
+			}
+		}
+    }
+}
