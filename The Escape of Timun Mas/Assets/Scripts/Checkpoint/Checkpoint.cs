@@ -20,7 +20,7 @@ public class Checkpoint : MonoBehaviour
 
     public void SetCheckpoint(int _index)
     {
-        index.value = _index - 1;
+        index.value = _index;
     }
 
     IEnumerator SetPosition()

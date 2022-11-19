@@ -9,9 +9,11 @@ public class AI_ScriptNew : MonoBehaviour
 	
 	public float targetDistance;
 	public float AllowedDistance = 5f;
-	public float FollowSpeed;
+
+	public float speed;
+	float FollowSpeed;
 	
-	public RaycastHit shoot;
+	RaycastHit shoot;
 	
     // Start is called before the first frame update
     void Start()
@@ -19,7 +21,7 @@ public class AI_ScriptNew : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
 	    Vector3 rotate = ThePlayer.transform.position - transform.position;
 	    Quaternion lockRotation = Quaternion.LookRotation(rotate);
@@ -31,9 +33,9 @@ public class AI_ScriptNew : MonoBehaviour
 			targetDistance = shoot.distance;
 			if(targetDistance >= AllowedDistance)
 			{
-				FollowSpeed = 0.05f;
+				FollowSpeed = speed;
 				//TheEnemy.GetComponent<animation>
-				transform.position = Vector3.MoveTowards(transform.position, ThePlayer.transform.position, FollowSpeed);
+				transform.position = Vector3.MoveTowards(transform.position, ThePlayer.transform.position, FollowSpeed * Time.deltaTime);
 			}
 			else
 			{
