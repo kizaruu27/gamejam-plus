@@ -20,8 +20,13 @@ public class AI_ScriptNew : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {		
-        transform.LookAt(ThePlayer.transform);
+    {
+	    Vector3 rotate = ThePlayer.transform.position - transform.position;
+	    Quaternion lockRotation = Quaternion.LookRotation(rotate);
+	    Vector3 rotation = Quaternion.Lerp(transform.rotation, lockRotation, 10 * Time.deltaTime).eulerAngles;
+	    transform.localRotation = Quaternion.Euler(0, rotation.y, 0);
+	    
+        // transform.LookAt(ThePlayer.transform);
 		if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out shoot)){
 			targetDistance = shoot.distance;
 			if(targetDistance >= AllowedDistance)
