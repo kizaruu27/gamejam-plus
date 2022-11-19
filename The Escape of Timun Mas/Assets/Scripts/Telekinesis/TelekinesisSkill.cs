@@ -11,7 +11,7 @@ public class TelekinesisSkill : MonoBehaviour
         {
             if (Input.GetMouseButton(0))
             {
-                other.transform.position = Vector3.MoveTowards(other.transform.position, targetTransform.position, transitionSpeed * Time.deltaTime);
+                other.transform.position = Vector3.Lerp(other.transform.position, targetTransform.position, transitionSpeed * Time.deltaTime);
                 other.transform.GetComponent<Rigidbody>().useGravity = false;
                 other.transform.GetComponent<BoxCollider>().isTrigger = true;
             }
