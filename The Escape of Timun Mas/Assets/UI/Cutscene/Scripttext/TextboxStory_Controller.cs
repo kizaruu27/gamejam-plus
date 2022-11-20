@@ -45,11 +45,17 @@ public class TextboxStory_Controller : MonoBehaviour
 	
 	public void PlayPreviousSentences()
 	{
-		Debug.Log(sentenceIndex);
+		//Debug.Log(sentenceIndex);
 		if(sentenceIndex > 0){
 			StartCoroutine(TypeText(currentScene.sentences[--sentenceIndex].text));
 			personNameText.text = currentScene.sentences[sentenceIndex].speaker.speakerName;
 		}
+	}
+	
+	public void RepeatSentences()
+	{
+		StartCoroutine(TypeText(currentScene.sentences[sentenceIndex].text));
+		personNameText.text = currentScene.sentences[sentenceIndex].speaker.speakerName;
 	}
 	
 	void Update()
@@ -67,6 +73,7 @@ public class TextboxStory_Controller : MonoBehaviour
 		while (state != State.COMPLETED)
 		{
 			barText.text += text[wordIndex];
+			GameObject.Find("BackgroundSoundText").GetComponent<AudioSource>().Play();
 			yield return new WaitForSeconds(waitForText);
 			
 			if(++wordIndex == text.Length){

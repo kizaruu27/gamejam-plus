@@ -9,10 +9,12 @@ public class OnMouseHover : MonoBehaviour
     void OnMouseOver()
 	{
 		scenes.CheckClickToNext = false;
+		Debug.Log("Mouse over object!");
 	}
 	
 	void OnMouseExit()
 	{
 		scenes.CheckClickToNext = true;
+		Debug.Log("Mouse leaves object!");
 	}
 }
