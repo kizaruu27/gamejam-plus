@@ -10,7 +10,7 @@ public class LoadScene : MonoBehaviour
         Invoke("SetScene", 2);
     }
 
-    void SetScene()
+    public void SetScene()
     {
         SceneManager.LoadScene(targetScene);
     }
