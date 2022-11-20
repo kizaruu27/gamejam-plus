@@ -6,6 +6,10 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverPanel;
     public GameObject blackScreen;
 
+    [Space]
+    public AudioSource mainBgm;
+    public AudioSource gameOverBgm;
+
     private bool isOver;
     private bool gameOver;
 
@@ -33,14 +37,16 @@ public class GameManager : MonoBehaviour
 
     void PuaseGame()
     {
+        mainBgm.Pause();
         Time.timeScale = 0;
         pausePanel.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
 
-    public void Resume()
+    public void ResumeGame()
     {
+        mainBgm.Play();
         Time.timeScale = 1;
         pausePanel.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
@@ -54,6 +60,8 @@ public class GameManager : MonoBehaviour
 
     void ActivateGameOverPanel()
     {
+        gameOverBgm.Play();
+        mainBgm.Stop();
         gameOverPanel.SetActive(true);
         isOver = true;
         Cursor.lockState = CursorLockMode.None;
@@ -65,6 +73,8 @@ public class GameManager : MonoBehaviour
         gameOver = false;
         isOver = false;
         
+        mainBgm.Play();
+        gameOverBgm.Stop();
         gameOverPanel.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
