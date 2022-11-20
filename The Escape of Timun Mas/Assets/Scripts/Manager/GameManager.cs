@@ -1,12 +1,10 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public GameObject pausePanel;
     public GameObject gameOverPanel;
+    public GameObject blackScreen;
 
     private bool isOver;
     private bool gameOver;
@@ -14,6 +12,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         Time.timeScale = 1;
+        FadeIn();
     }
 
     private void Update()
@@ -69,6 +68,24 @@ public class GameManager : MonoBehaviour
         gameOverPanel.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+    }
+
+    void FadeIn()
+    {
+        blackScreen.SetActive(true);
+        blackScreen.GetComponent<Animator>().Play("fade in");
+        Invoke("TurnOffBlackScreen", 2);
+    }
+
+    public void FadeOut()
+    {
+        blackScreen.SetActive(true);
+        blackScreen.GetComponent<Animator>().Play("fade out");
+    }
+
+    void TurnOffBlackScreen()
+    {
+        blackScreen.SetActive(false);
     }
     
 }

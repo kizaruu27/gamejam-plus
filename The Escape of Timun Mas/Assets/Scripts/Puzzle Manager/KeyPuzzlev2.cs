@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class KeyPuzzle : MonoBehaviour
+public class KeyPuzzlev2 : MonoBehaviour
 {
 
     public GameObject Keys;

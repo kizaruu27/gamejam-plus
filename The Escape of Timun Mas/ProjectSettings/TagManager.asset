@@ -9,6 +9,7 @@ TagManager:
   - Keys
   - GameOver
   - Puzzle Item
+  - Door
   layers:
   - Default
   - TransparentFX
