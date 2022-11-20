@@ -4,12 +4,14 @@ public class TelekinesisSkill : MonoBehaviour
 {
     public string targetTag;
     public float transitionSpeed = 5;
+    public GameObject interactionUI;
     public Transform targetTransform;
 
     private void OnTriggerStay(Collider other)
     {
         if (other.tag == targetTag)
         {
+            interactionUI.SetActive(true);
             if (Input.GetMouseButton(0))
             {
                 other.transform.position = Vector3.MoveTowards(other.transform.position, targetTransform.position, transitionSpeed * Time.deltaTime);
@@ -28,6 +30,7 @@ public class TelekinesisSkill : MonoBehaviour
     {
         if (other.tag == targetTag)
         {
+            interactionUI.SetActive(false);
             other.transform.GetComponent<Rigidbody>().useGravity = true;
             other.transform.GetComponent<BoxCollider>().isTrigger = false;
         }
