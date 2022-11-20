@@ -6,9 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Feature/Prolog 1.unity
+    guid: 5685d62ea9ba7474d8252a47b1455a02
+  - enabled: 1
+    path: Assets/Scenes/Feature/Main Menu.unity
+    guid: 0b723e9ebc665174499f2ae0f34162f1
+  - enabled: 1
     path: Assets/Scenes/Main/Chapter 1.unity
     guid: 7196e3962a8a0654c96a4215d03de37c
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Main/Chapter 2.unity
     guid: a905f97fd0a38e542aa45e9021ce0177
   m_configObjects:

@@ -1,12 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SceneController : MonoBehaviour
 {
     public StoryScene currentScene;
 	public TextboxStory_Controller textbox;
 	public bool CheckClickToNext;
+	public bool isAutoPlay;
+	
+	public GameObject buttonNext;
+	public Sprite buttonNextNormal;
+	public Sprite buttonNextAuto;
 	
     void Start()
     {
@@ -18,6 +24,7 @@ public class SceneController : MonoBehaviour
     void Update()
     {
         MouseControl();
+		AutoPlay();
     }
 	
 	void MouseControl()
@@ -38,6 +45,53 @@ public class SceneController : MonoBehaviour
 	
 	public void PreviousSentences()
 	{
-		textbox.PlayPreviousSentences();
+		if(textbox.IsCompleted())
+		{
+			textbox.PlayPreviousSentences();
+		}
+	}
+	
+	public void RepeatText()
+	{
+		if(textbox.IsCompleted())
+		{
+			textbox.RepeatSentences();
+		}
+	}
+	
+	public void EnableStoryClickMouse()
+	{
+		CheckClickToNext = true;
+	}
+	public void DisableStoryClickMouse()
+	{
+		CheckClickToNext = false;
+	}
+	
+	public void EnableAutoPlay()
+	{
+		isAutoPlay = !isAutoPlay;
+		if(isAutoPlay){
+			buttonNext.GetComponent<Image>().sprite = buttonNextAuto;
+			Debug.Log("Sudah");
+		}
+		else{
+			buttonNext.GetComponent<Image>().sprite = buttonNextNormal;
+		}
+	}
+	
+	public void AutoPlay()
+	{
+		if(isAutoPlay){
+			if(textbox.IsCompleted())
+			{
+				StartCoroutine(Wait1S());
+			}
+		}
+	}
+	IEnumerator Wait1S()
+	{
+		yield return new WaitForSeconds(3);
+		textbox.PlayNextSentences();
 	}
 }
