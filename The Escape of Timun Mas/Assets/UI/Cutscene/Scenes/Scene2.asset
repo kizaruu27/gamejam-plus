@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ee27815d193ede4487ed2309a03df67, type: 3}
+  m_Name: Scene2
+  m_EditorClassIdentifier: 
+  sentences:
+  - text: Timun Mas berlari sekencang-kencangnya karena dikejar oleh raksasa, ia
+      pun mengeluarkan senjata pertama.
+    speaker: {fileID: 11400000, guid: 6d95ade5bf5128e41a441b46791ffaa1, type: 2}
+  - text: Timun Mas mengeluarkan dua senjata lainnya dan raksasa jahat masih mengejarnya
+      dengan mudah.
+    speaker: {fileID: 11400000, guid: 6d95ade5bf5128e41a441b46791ffaa1, type: 2}
+  - text: Akhirnya dengan senjata terakhir, raksasa pun terkalahkan dan Timun Mas
+      kembali menuju menemui Mbok Srini.
+    speaker: {fileID: 11400000, guid: 6d95ade5bf5128e41a441b46791ffaa1, type: 2}
+  background: {fileID: 0}
+  nextScene: {fileID: 0}
