@@ -556,7 +556,7 @@ PrefabInstance:
     - target: {fileID: 2383021752243553741, guid: 097a71fddb5f65a4fbafc51165f36f91,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 123.02
+      value: 325.35
       objectReference: {fileID: 0}
     - target: {fileID: 2383021752243553741, guid: 097a71fddb5f65a4fbafc51165f36f91,
         type: 3}
@@ -3227,7 +3227,8 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Ini Cube
+          m_StringArgument: Terdapat lambang aneh pada batu itu, aku penasaran lambang
+            apakah itu...
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1118445215
@@ -4337,7 +4338,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 28, y: 108}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 626.364, y: 185.175}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1347736204
 MonoBehaviour:
@@ -4361,8 +4362,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1f034e96baabc9b46a7967a044d3a21e, type: 2}
+  m_sharedMaterial: {fileID: -7792853245282947520, guid: 1f034e96baabc9b46a7967a044d3a21e,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4386,8 +4388,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 46.5
+  m_fontSizeBase: 46.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6610,7 +6612,7 @@ PrefabInstance:
     - target: {fileID: 3134502661878026102, guid: 3db99ddd272b60148b2ac0b39a993469,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 122.74
+      value: 325.07
       objectReference: {fileID: 0}
     - target: {fileID: 3134502661878026102, guid: 3db99ddd272b60148b2ac0b39a993469,
         type: 3}
@@ -6674,7 +6676,7 @@ PrefabInstance:
     - target: {fileID: 7259384096455836048, guid: b436a3c479707254d969188144511c1c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 122.74
+      value: 325.07
       objectReference: {fileID: 0}
     - target: {fileID: 7259384096455836048, guid: b436a3c479707254d969188144511c1c,
         type: 3}
